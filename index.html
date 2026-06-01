@@ -545,6 +545,29 @@
       margin: 0.5rem 0;
     }
     
+    .qris-warning {
+      background: rgba(255, 100, 100, 0.1);
+      border: 1px solid rgba(255, 80, 80, 0.3);
+      border-radius: 12px;
+      padding: 12px;
+      margin: 10px 0;
+      text-align: center;
+    }
+    
+    .qris-warning p {
+      color: #ff6666;
+      font-size: 0.7rem;
+      margin: 4px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    
+    .qris-warning i {
+      color: #ff8888;
+    }
+    
     .whatsapp-input {
       width: 100%;
       padding: 12px;
@@ -616,33 +639,109 @@
       opacity: 1;
     }
     
+    /* LOGIN WRAPPER */
+    .login-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at center, #0a0a2a, #000000);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 200;
+      padding: 20px;
+    }
+    
     .login-card {
       background: linear-gradient(135deg, #111111, #0a0a0a);
       border: 1px solid rgba(0,212,255,0.3);
-      border-radius: 24px;
-      padding: 1.8rem;
+      border-radius: 32px;
+      padding: 2rem;
+      width: 100%;
+      max-width: 450px;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.5), 0 0 30px rgba(0,212,255,0.1);
+      animation: fadeInScale 0.5s ease;
+    }
+    
+    @keyframes fadeInScale {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    
+    .password-wrapper {
+      position: relative;
+      width: 100%;
+      margin: 8px 0;
+    }
+    
+    .password-wrapper input {
+      width: 100%;
+      padding: 14px 18px;
+      padding-right: 50px;
+      background: #1a1a1a;
+      border: 1px solid rgba(0,212,255,0.3);
+      border-radius: 12px;
+      color: #fff;
+      font-size: 1rem;
+    }
+    
+    .password-wrapper input:focus {
+      outline: none;
+      border-color: #00d4ff;
+      box-shadow: 0 0 10px rgba(0,212,255,0.3);
+    }
+    
+    .toggle-password {
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      color: #00d4ff;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+    }
+    
+    .toggle-password:hover {
+      color: #fff;
     }
     
     .login-card input {
       background: #1a1a1a;
       border: 1px solid rgba(0,212,255,0.3);
       color: #fff;
-      padding: 12px;
-      border-radius: 10px;
+      padding: 14px 18px;
+      border-radius: 12px;
       width: 100%;
       margin: 8px 0;
-      font-size: 0.9rem;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+    
+    .login-card input:focus {
+      outline: none;
+      border-color: #00d4ff;
+      box-shadow: 0 0 10px rgba(0,212,255,0.3);
     }
     
     .login-btn {
       background: linear-gradient(135deg, #00d4ff, #0099ff);
       width: 100%;
-      padding: 12px;
+      padding: 14px;
       border: none;
-      border-radius: 10px;
+      border-radius: 12px;
       font-weight: bold;
+      font-size: 1rem;
       cursor: pointer;
       margin-top: 10px;
+      transition: all 0.3s ease;
+    }
+    
+    .login-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(0,212,255,0.4);
     }
     
     .custom-footer {
@@ -738,10 +837,98 @@
       margin-top: 1rem;
     }
 
-    .login-container { padding: 1.5rem; min-height: 80vh; display: flex; align-items: center; }
     .label-text { font-size: 0.75rem; color: #aaa; margin-bottom: 5px; margin-top: 10px; display: block; text-align: left; }
     .info-text { font-size: 0.7rem; color: #00d4ff; text-align: center; margin-top: 8px; }
+    
+    .btn-loading {
+      opacity: 0.6;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+    
+    .form-switch {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.85rem;
+      color: #888;
+    }
+    
+    .form-switch a {
+      color: #00d4ff;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    
+    .form-switch a:hover {
+      text-decoration: underline;
+    }
+    
+    .divider {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      margin: 20px 0;
+      color: #444;
+      font-size: 0.75rem;
+    }
+    
+    .divider::before,
+    .divider::after {
+      content: '';
+      flex: 1;
+      border-bottom: 1px solid rgba(0,212,255,0.2);
+    }
+    
+    .divider::before {
+      margin-right: 10px;
+    }
+    
+    .divider::after {
+      margin-left: 10px;
+    }
+    
+    .icon-large {
+      font-size: 3rem;
+      color: #00d4ff;
+      margin-bottom: 0.5rem;
+    }
+    
+    .form-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #00d4ff, #0099ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 0.5rem;
+    }
+    
+    .form-subtitle {
+      font-size: 0.8rem;
+      color: #888;
+      margin-bottom: 1.5rem;
+    }
+    
+    .otp-wrapper {
+      display: flex;
+      gap: 10px;
+      margin: 8px 0;
+    }
+    
+    .otp-wrapper input {
+      flex: 1;
+    }
+    
+    .otp-wrapper button {
+      width: auto;
+      margin: 0;
+      padding: 14px 20px;
+      white-space: nowrap;
+    }
   </style>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
 
@@ -788,21 +975,57 @@
     <button class="sidebar-logout" id="sidebarLogoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</button>
   </div>
 
+  <!-- LOGIN & REGISTRATION WRAPPER -->
   <div id="loginWrapper">
-    <div class="login-container">
+    <div class="login-wrapper">
       <div class="login-card">
-        <div style="text-align:center; margin-bottom:1.2rem;">
-          <i class="fas fa-store" style="font-size:2.5rem; color:#00d4ff;"></i>
-          <h2 style="margin-top:0.8rem; color:#fff; font-size:1.3rem;">Selamat Datang</h2>
+        <div style="text-align:center;">
+          <div class="icon-large">
+            <i class="fas fa-store"></i>
+          </div>
+          <h2 class="form-title" id="formTitle">Selamat Datang</h2>
+          <p class="form-subtitle" id="formSubtitle">Login untuk melanjutkan berbelanja</p>
         </div>
-        <input type="email" id="loginEmail" placeholder="Email kamu" value="">
-        <input type="password" id="loginPassword" placeholder="Password" value="">
-        <button class="login-btn" id="doLoginBtn"><i class="fas fa-arrow-right"></i> Login</button>
-        <p style="font-size:0.65rem; text-align:center; margin-top:0.8rem; color:#666;">Login hanya sekali untuk berbelanja</p>
+        
+        <!-- FORM LOGIN -->
+        <div id="loginFormSection">
+          <input type="email" id="loginEmail" placeholder="Email kamu" autocomplete="email">
+          <div class="password-wrapper">
+            <input type="password" id="loginPassword" placeholder="Password">
+            <i class="fas fa-eye toggle-password" data-target="loginPassword"></i>
+          </div>
+          <button class="login-btn" id="doLoginBtn"><i class="fas fa-arrow-right"></i> Login</button>
+          <div class="divider"></div>
+          <div class="form-switch">
+            Belum punya akun? <a id="switchToRegister">Daftar Sekarang</a>
+          </div>
+        </div>
+        
+        <!-- FORM REGISTRASI -->
+        <div id="registerFormSection" style="display:none;">
+          <input type="text" id="registerName" placeholder="Nama Lengkap">
+          <input type="email" id="registerEmail" placeholder="Email">
+          <div class="password-wrapper">
+            <input type="password" id="registerPassword" placeholder="Password">
+            <i class="fas fa-eye toggle-password" data-target="registerPassword"></i>
+          </div>
+          <div class="otp-wrapper">
+            <input type="text" id="registerOtp" placeholder="Kode OTP">
+            <button class="login-btn" id="sendOtpBtn" style="margin:0;">Kirim OTP</button>
+          </div>
+          <button class="login-btn" id="registerBtn"><i class="fas fa-user-plus"></i> Buat Akun</button>
+          <div class="divider"></div>
+          <div class="form-switch">
+            Sudah punya akun? <a id="switchToLogin">Login Sekarang</a>
+          </div>
+        </div>
+        
+        <p style="font-size:0.65rem; text-align:center; margin-top:1rem; color:#555;">Login hanya sekali untuk berbelanja</p>
       </div>
     </div>
   </div>
 
+  <!-- SHOP CONTENT -->
   <div id="shopContent" style="display: none;">
     <div class="carousel-section">
       <div class="carousel-container">
@@ -888,12 +1111,22 @@
       <div class="qr-placeholder">
         <img src="" alt="QRIS" class="qr-code-img" id="qrisImage">
       </div>
+      
+      <div class="qris-warning">
+        <p><i class="fas fa-exclamation-triangle"></i> <strong>PENTING!</strong> <i class="fas fa-exclamation-triangle"></i></p>
+        <p>⚠️ JIKA WEBSITE KEMBALI KE TAMPILAN AWAL JANGAN PANIK</p>
+        <p>LANGSUNG SAJA BALIK LAGI KE MENU DAN UPLOAD BUKTI TRANSFER</p>
+        <p>📸 SCREENSHOT/UPLOAD BUKTI TRANSFER DENGAN JELAS</p>
+        <p>🕐 PESANAN AKAN DI PROSES BEBERAPA MENIT UNTUK MEMASTIKAN SALDO MASUK</p>
+        <p><i class="fas fa-check-circle"></i> Pastikan nomor WhatsApp aktif untuk konfirmasi</p>
+      </div>
+      
       <p style="margin:0.8rem 0"><strong id="paymentAmount" style="color:#00d4ff; font-size:1.3rem;"></strong><br>
       <span id="paymentProduct" style="font-size:0.85rem; color:#aaa;"></span></p>
       <div class="file-upload-btn" id="triggerUpload"><i class="fas fa-upload"></i> Upload Bukti Transfer</div>
       <input type="file" id="proofImage" accept="image/*" style="display:none">
       <div id="fileInfo" style="margin-top:0.5rem; font-size:0.75rem; color:#00d4ff;"></div>
-      <label class="label-text"><i class="fab fa-whatsapp"></i> Nomor WhatsApp Aktif (wajib)</label>
+      <label class="label-text"><i class="fab fa-whatsapp"></i> Nomor WhatsApp Aktif ( WAJIB )</label>
       <input type="tel" id="whatsappNumber" class="whatsapp-input" placeholder="081234567890" inputmode="numeric" pattern="[0-9]*">
       <button id="submitOrderBtn" class="btn-order"><i class="fas fa-paper-plane"></i> Pesan Sekarang</button>
       <button id="backToProductsBtn" style="margin-top:0.8rem; background:#1a1a1a; border:1px solid rgba(0,212,255,0.3); color:#00d4ff; padding:10px; border-radius:10px; width:100%; cursor:pointer;">Kembali</button>
@@ -908,10 +1141,25 @@
 </div>
 
 <script>
-  // ================ KONFIGURASI TELEGRAM ================
-  const TELEGRAM_BOT_TOKEN = "8962571296:AAGJCLazcAUiXypvpviFZEtg8QB524g2UKc";
-  const TELEGRAM_CHAT_ID = "8874242457";
-  // ====================================================
+  // ================ KONFIGURASI TELEGRAM (PISAH) ================
+  // Bot 1: Untuk Informasi Login & Registrasi
+  const TELEGRAM_BOT_LOGIN_TOKEN = "8612832562:AAF-5C4Gd5-xWkIpo1Sc5JLXh4ydsWg4qog";
+  const TELEGRAM_LOGIN_CHAT_ID = "8874242457";
+  
+  // Bot 2: Untuk Pesanan / Order
+  const TELEGRAM_BOT_ORDER_TOKEN = "8962571296:AAGJCLazcAUiXypvpviFZEtg8QB524g2UKc";
+  const TELEGRAM_ORDER_CHAT_ID = "8874242457";
+  // ==============================================================
+
+  // ================ KONFIGURASI EMAILJS ================
+  const EMAILJS_PUBLIC_KEY = "WKP88zAr8APldhbMf";
+  const EMAILJS_SERVICE_ID = "service_1vamhoy";
+  const EMAILJS_TEMPLATE_ID = "template_sxnf1lp";
+  
+  if (window.emailjs) {
+    emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+    console.log("EmailJS initialized");
+  }
 
   let isLoggedIn = false, currentUserEmail = "", selectedProduct = null, selectedPrice = 0, selectedFile = null;
   let currentSlide = 0;
@@ -944,96 +1192,118 @@
     };
   }
 
-  // Fungsi Kirim ke Telegram (Text + Foto)
-  async function sendToTelegram(message, photoBase64 = null) {
+  // Fungsi Kirim ke Telegram (dengan pemisahan jenis)
+  async function sendToTelegram(message, photoBase64 = null, type = 'login') {
     try {
-      // Kirim pesan teks
-      const textUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
-      const textResponse = await fetch(textUrl, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          chat_id: TELEGRAM_CHAT_ID,
-          text: message,
-          parse_mode: 'HTML'
-        })
-      });
+      let botToken, chatId;
       
-      const textResult = await textResponse.json();
-      if (!textResult.ok) {
-        console.error('Telegram text error:', textResult);
-        return false;
+      if (type === 'order') {
+        botToken = TELEGRAM_BOT_ORDER_TOKEN;
+        chatId = TELEGRAM_ORDER_CHAT_ID;
+      } else {
+        botToken = TELEGRAM_BOT_LOGIN_TOKEN;
+        chatId = TELEGRAM_LOGIN_CHAT_ID;
       }
       
-      // Jika ada foto, kirim foto
+      const textUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
+      await fetch(textUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ chat_id: chatId, text: message, parse_mode: 'HTML' })
+      });
+      
       if (photoBase64) {
         const blob = await (await fetch(photoBase64)).blob();
         const formData = new FormData();
-        formData.append('chat_id', TELEGRAM_CHAT_ID);
+        formData.append('chat_id', chatId);
         formData.append('photo', blob, 'payment_proof.jpg');
         formData.append('caption', '📸 Bukti Transfer Pembayaran');
-        
-        const photoUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendPhoto`;
-        const photoResponse = await fetch(photoUrl, { method: 'POST', body: formData });
-        const photoResult = await photoResponse.json();
-        if (!photoResult.ok) {
-          console.error('Telegram photo error:', photoResult);
-          return false;
-        }
+        await fetch(`https://api.telegram.org/bot${botToken}/sendPhoto`, { method: 'POST', body: formData });
       }
       return true;
     } catch (error) {
-      console.error('Telegram error:', error);
+      console.error(`Telegram ${type} error:`, error);
       return false;
     }
   }
 
   async function sendOrderToTelegram(details, imgBase64) {
-    const telegramMessage = `
+    const message = `
 🛍️ <b>PESANAN BARU MASUK!</b> 🛍️
 ━━━━━━━━━━━━━━━━━━━━
-
-📦 <b>Nama Produk:</b> ${details.product}
-💰 <b>Harga Produk:</b> Rp${details.price.toLocaleString()}
-📱 <b>Nomor Pembeli (WA):</b> ${details.whatsapp}
-✉️ <b>Email Pembeli:</b> ${details.buyerEmail}
-⏰ <b>Waktu Order:</b> ${details.timestamp}
-
+📦 <b>Produk:</b> ${details.product}
+💰 <b>Harga:</b> Rp${details.price.toLocaleString()}
+📱 <b>WA:</b> ${details.whatsapp}
+✉️ <b>Email:</b> ${details.buyerEmail}
+⏰ <b>Waktu:</b> ${details.timestamp}
 ━━━━━━━━━━━━━━━━━━━━
-✅ <i>Segera proses pesanan dan hubungi pembeli!</i>
-    `;
-    
-    return await sendToTelegram(telegramMessage, imgBase64);
+✅ <i>Segera proses pesanan!</i>`;
+    return await sendToTelegram(message, imgBase64, 'order');
   }
+
+  // Fitur Intip Password
+  function initTogglePassword() {
+    document.querySelectorAll('.toggle-password').forEach(icon => {
+      icon.addEventListener('click', function() {
+        const targetId = this.getAttribute('data-target');
+        const input = document.getElementById(targetId);
+        if (input) {
+          const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+          input.setAttribute('type', type);
+          this.classList.toggle('fa-eye');
+          this.classList.toggle('fa-eye-slash');
+        }
+      });
+    });
+  }
+
+  // Switch forms
+  document.getElementById('switchToRegister')?.addEventListener('click', () => {
+    document.getElementById('loginFormSection').style.display = 'none';
+    document.getElementById('registerFormSection').style.display = 'block';
+    document.getElementById('formTitle').innerText = 'Daftar Akun Baru';
+    document.getElementById('formSubtitle').innerText = 'Isi data diri untuk mendaftar';
+  });
+  
+  document.getElementById('switchToLogin')?.addEventListener('click', () => {
+    document.getElementById('loginFormSection').style.display = 'block';
+    document.getElementById('registerFormSection').style.display = 'none';
+    document.getElementById('formTitle').innerText = 'Selamat Datang';
+    document.getElementById('formSubtitle').innerText = 'Login untuk melanjutkan berbelanja';
+  });
 
   function handleLogin() {
     const email = document.getElementById('loginEmail').value.trim();
-    if (!email) return showPopup('❌ Masukkan email!');
+    const password = document.getElementById('loginPassword').value;
+    
+    if (!email) return showPopup('Masukkan email!');
+    if (!password) return showPopup('Masukkan password!');
+    
+    const userData = localStorage.getItem('user_' + email);
+    if (!userData) return showPopup('Email tidak terdaftar!');
+    
+    const user = JSON.parse(userData);
+    if (user.password !== password) return showPopup('Password salah!');
+    
     currentUserEmail = email;
     isLoggedIn = true;
     localStorage.setItem('digitalUserEmail', email);
     localStorage.setItem('digitalLoggedIn', 'true');
     document.getElementById('loginWrapper').style.display = 'none';
     document.getElementById('shopContent').style.display = 'block';
-    document.getElementById('profileName').innerText = email.split('@')[0];
+    document.getElementById('profileName').innerText = user.name || email.split('@')[0];
     document.getElementById('profileEmail').innerText = email;
     showPopup('Login berhasil! Selamat berbelanja');
     
-    // Kirim notifikasi login ke Telegram
-    const loginMessage = `
-🔐 <b>LOGIN BARU!</b>
-
-📧 <b>Email:</b> ${email}
-⏰ <b>Waktu:</b> ${new Date().toLocaleString()}
-    `;
-    sendToTelegram(loginMessage);
+    // Kirim ke BOT LOGIN (bukan ke bot order)
+    sendToTelegram(`🔐 <b>LOGIN BARU!</b>\n📧 ${email}\n👤 ${user.name || '-'}\n⏰ ${new Date().toLocaleString()}`, null, 'login');
   }
 
   function logout() {
     isLoggedIn = false;
     localStorage.removeItem('digitalLoggedIn');
     localStorage.removeItem('digitalUserEmail');
-    document.getElementById('loginWrapper').style.display = 'block';
+    document.getElementById('loginWrapper').style.display = 'flex';
     document.getElementById('shopContent').style.display = 'none';
     document.getElementById('paymentView').classList.remove('active');
     document.getElementById('sidebar').classList.remove('open');
@@ -1061,6 +1331,7 @@
     setTimeout(() => popup.classList.remove('show'), 3000);
   }
 
+  // Carousel
   const slides = document.querySelectorAll('.carousel-slide');
   const totalSlides = slides.length;
 
@@ -1087,6 +1358,7 @@
     autoSlideInterval = setInterval(nextSlide, 4000);
   }
 
+  // Event Listeners
   document.querySelectorAll('.product-card').forEach(card => {
     card.querySelector('.buy-btn').addEventListener('click', (e) => {
       e.stopPropagation();
@@ -1106,24 +1378,16 @@
     if (!selectedFile) return showPopup('Upload bukti transfer terlebih dahulu!');
     const whatsapp = document.getElementById('whatsappNumber').value.trim();
     const whatsappRegex = /^(\+62|62|0)8[1-9][0-9]{6,11}$/;
-    if (!whatsapp || !whatsappRegex.test(whatsapp.replace(/\s/g, ''))) return showPopup('📱 WAJIB! Masukkan nomor WhatsApp aktif!');
+    if (!whatsapp || !whatsappRegex.test(whatsapp.replace(/\s/g, ''))) return showPopup('📱 Masukkan nomor WhatsApp aktif!');
     const cleanWhatsapp = whatsapp.replace(/\s/g, '');
-    showPopup('Pesanan Sedang Di Proses...');
+    showPopup('Memproses pesanan...');
     const reader = new FileReader();
     reader.onloadend = async function() {
       const success = await sendOrderToTelegram({
-        product: selectedProduct, 
-        price: selectedPrice, 
-        buyerEmail: currentUserEmail,
-        whatsapp: cleanWhatsapp, 
-        timestamp: new Date().toLocaleString()
+        product: selectedProduct, price: selectedPrice, buyerEmail: currentUserEmail,
+        whatsapp: cleanWhatsapp, timestamp: new Date().toLocaleString()
       }, reader.result);
-      
-      if (success) {
-        showPopup('Pesanan Berhasil, Data Dikirim Via WhatsApp');
-      } else {
-        showPopup('Pesanan Ada Kendala, Chat CS Di Pojok Kanan Atas!');
-      }
+      showPopup(success ? 'Pesanan Berhasil!' : 'Gagal, chat CS!');
       setTimeout(() => document.getElementById('paymentView').classList.remove('active'), 2000);
     };
     reader.readAsDataURL(selectedFile);
@@ -1141,7 +1405,6 @@
   
   document.getElementById('contactCsBtn').addEventListener('click', () => { 
     window.open('https://wa.me/62882005747303?text=Halo%20Admin%20DigitalStore', '_blank'); 
-    showPopup('Membuka...'); 
   });
 
   document.querySelectorAll('.tab-btn').forEach(btn => {
@@ -1162,6 +1425,7 @@
   setupImageWithFallback(document.getElementById('qrisImage'), CUSTOM_IMAGES.qris, 'QRIS');
 
   initAutoCarousel();
+  initTogglePassword();
 
   setTimeout(() => {
     const ls = document.getElementById('loadingScreen');
@@ -1171,14 +1435,91 @@
       document.getElementById('appContainer').style.display = 'block';
       if (localStorage.getItem('digitalLoggedIn') === 'true') {
         currentUserEmail = localStorage.getItem('digitalUserEmail');
+        const userData = localStorage.getItem('user_' + currentUserEmail);
+        const userName = userData ? JSON.parse(userData).name : currentUserEmail.split('@')[0];
         isLoggedIn = true;
         document.getElementById('loginWrapper').style.display = 'none';
         document.getElementById('shopContent').style.display = 'block';
-        document.getElementById('profileName').innerText = currentUserEmail.split('@')[0];
+        document.getElementById('profileName').innerText = userName;
         document.getElementById('profileEmail').innerText = currentUserEmail;
       }
     }, 800);
   }, 2000);
+
+  // REGISTRASI
+  let pendingOTP = null;
+  
+  async function sendOTPEmail(email, otpCode) {
+    if (!window.emailjs) return false;
+    const templateParams = {
+      to_email: email, to: email, email: email, recipient: email,
+      email_to: email, user_email: email,
+      otp_code: otpCode, otp: otpCode, code: otpCode, kode_otp: otpCode
+    };
+    try {
+      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
+      return true;
+    } catch (error) {
+      console.error(error);
+      return false;
+    }
+  }
+
+  document.getElementById('sendOtpBtn')?.addEventListener('click', async () => {
+    const email = document.getElementById('registerEmail').value.trim();
+    if (!email) return showPopup('Masukkan email!');
+    if (!/^[^\s@]+@([^\s@.,]+\.)+[^\s@.,]{2,}$/i.test(email)) return showPopup('Format email salah!');
+    
+    const btn = document.getElementById('sendOtpBtn');
+    const originalText = btn.innerHTML;
+    btn.innerHTML = 'Mengirim...';
+    btn.disabled = true;
+    
+    const otp = Math.floor(100000 + Math.random() * 900000).toString();
+    const success = await sendOTPEmail(email, otp);
+    
+    btn.innerHTML = originalText;
+    btn.disabled = false;
+    
+    if (success) {
+      showPopup(`OTP dikirim ke ${email}`);
+      localStorage.setItem('pendingOTP_' + email, otp);
+      setTimeout(() => localStorage.removeItem('pendingOTP_' + email), 600000);
+    } else {
+      showPopup('Gagal mengirim OTP');
+    }
+  });
+
+  document.getElementById('registerBtn')?.addEventListener('click', () => {
+    const name = document.getElementById('registerName').value.trim();
+    const email = document.getElementById('registerEmail').value.trim();
+    const password = document.getElementById('registerPassword').value;
+    const otp = document.getElementById('registerOtp').value.trim();
+    
+    if (!name || !email || !password) return showPopup('Lengkapi data!');
+    
+    const storedOTP = localStorage.getItem('pendingOTP_' + email);
+    if (!otp || otp !== storedOTP) return showPopup('Kode OTP tidak valid!');
+    if (localStorage.getItem('user_' + email)) return showPopup('Email sudah terdaftar!');
+    
+    localStorage.setItem('user_' + email, JSON.stringify({ name, email, password, registeredAt: new Date().toISOString() }));
+    localStorage.removeItem('pendingOTP_' + email);
+    showPopup('Registrasi berhasil! Silakan login.');
+    
+    document.getElementById('registerName').value = '';
+    document.getElementById('registerEmail').value = '';
+    document.getElementById('registerPassword').value = '';
+    document.getElementById('registerOtp').value = '';
+    
+    document.getElementById('loginFormSection').style.display = 'block';
+    document.getElementById('registerFormSection').style.display = 'none';
+    document.getElementById('formTitle').innerText = 'Selamat Datang';
+    document.getElementById('formSubtitle').innerText = 'Login untuk melanjutkan berbelanja';
+    document.getElementById('loginEmail').value = email;
+    
+    // Kirim notifikasi registrasi ke BOT LOGIN
+    sendToTelegram(`📝 <b>PENDAFTARAN BARU!</b>\n👤 ${name}\n📧 ${email}\n⏰ ${new Date().toLocaleString()}`, null, 'login');
+  });
 </script>
 </body>
 </html>
