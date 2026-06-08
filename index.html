@@ -15,9 +15,9 @@
       min-height: 100vh; 
       overflow-x: hidden; 
       transition: background-color 0.3s ease, color 0.2s ease;
+      color: #f0f0f0;
     }
     
-    /* Stars background (Dark Mode default) */
     .stars-bg {
       position: fixed;
       top: 0;
@@ -56,6 +56,7 @@
     /* Light Mode Overrides */
     body.light-mode {
       background: #f5f7fc;
+      color: #1e2a3e;
     }
     body.light-mode .stars-bg {
       background: linear-gradient(145deg, #eef2f7, #ffffff);
@@ -81,10 +82,6 @@
       background: #ffffff !important;
       border: 1px solid #e0e4ec !important;
     }
-    body.light-mode .product-card:hover {
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-      border-color: #00d4ff !important;
-    }
     body.light-mode .store-name,
     body.light-mode .price,
     body.light-mode .tab-btn.active,
@@ -105,115 +102,30 @@
     body.light-mode .history-date {
       color: #1e2a3e !important;
     }
-    body.light-mode .price {
-      color: #0891b2 !important;
-    }
-    body.light-mode .buy-btn {
-      background: linear-gradient(135deg, #0891b2, #0e7c9e);
-      color: white;
-    }
-    body.light-mode .tab-btn {
-      color: #2c3e50;
-    }
-    body.light-mode .tab-btn.active {
-      background: #e2f0ff !important;
-      color: #0070b3 !important;
-      border-color: #00b4d8 !important;
-    }
-    body.light-mode .announcement {
-      background: #eef2fa;
-      border-color: #cbd5e1;
-    }
-    body.light-mode .marquee-text span {
-      color: #0f172a;
-    }
-    body.light-mode .sidebar {
-      background: #ffffff !important;
-      border-left-color: #ccc;
-    }
-    body.light-mode .menu-item {
-      border-bottom-color: #e9ecef;
-    }
-    body.light-mode .sidebar-logout {
-      background: #f1f5f9;
-      color: #0f172a;
-      border-color: #cbd5e1;
-    }
-    body.light-mode .sidebar-logout:hover {
-      background: #e2e8f0;
-      color: #000;
-    }
-    body.light-mode .qr-download-btn,
-    body.light-mode .file-upload-btn {
-      background: #f1f5f9;
-      color: #0c4a6e;
-      border-color: #cbd5e1;
-    }
-    body.light-mode .btn-order {
-      background: linear-gradient(135deg, #0891b2, #0e7c9e);
-      color: white;
-    }
-    body.light-mode .warning-text {
-      background: #fff3e0;
-      color: #b45309;
-    }
-    body.light-mode .qris-warning {
-      background: #fee2e2;
-      border-color: #fecaca;
-    }
-    body.light-mode .qris-warning p {
-      color: #b91c1c;
-    }
-    body.light-mode .whatsapp-input {
-      background: #f9f9ff;
-      border-color: #ccc;
-      color: #000;
-    }
-    body.light-mode .login-card input,
-    body.light-mode .password-wrapper input {
-      background: #ffffff;
-      border-color: #ccc;
-      color: #000;
-    }
-    body.light-mode .login-btn {
-      background: linear-gradient(135deg, #0891b2, #0e7c9e);
-    }
-    body.light-mode .form-title,
-    body.light-mode .form-subtitle {
-      color: #0f172a;
-    }
-    body.light-mode .form-switch a {
-      color: #0891b2;
-    }
-    body.light-mode .social-item {
-      background: #f8fafc;
-      border-color: #e2e8f0;
-    }
-    body.light-mode .social-item:hover {
-      background: #eef2ff;
-    }
     body.light-mode .social-name {
       color: #0f172a !important;
     }
     body.light-mode .social-title {
       color: #0c4a6e !important;
     }
-    body.light-mode .custom-footer .social-title i,
-    body.light-mode .custom-footer .social-title {
-      color: #155e75;
-    }
     body.light-mode .product-icon {
       background: #e6f7ff;
       color: #0891b2;
     }
-    body.light-mode .header {
-      border-bottom-color: #cbd5e1;
+    body.light-mode .order-processing-message {
+      background: #f0f9ff;
+      color: #0c4a6e;
     }
-    body.light-mode .popup-notification {
-      background: #ffffffcc;
-      backdrop-filter: blur(8px);
-      color: #0f172a;
+    /* Custom Confirm Modal Light Mode */
+    body.light-mode .custom-confirm-card {
+      background: #ffffff;
       border-color: #0891b2;
+      color: #1e293b;
+    }
+    body.light-mode .confirm-no {
+      background: #e2e8f0;
+      color: #1e293b;
+      border-color: #cbd5e1;
     }
     
     /* Animations */
@@ -234,19 +146,7 @@
     }
     
     .loading-screen { 
-      position: fixed; 
-      top: 0; 
-      left: 0; 
-      width: 100%; 
-      height: 100%; 
-      background: radial-gradient(circle at center, #0a0a2a, #000); 
-      display: flex; 
-      justify-content: center; 
-      align-items: center; 
-      z-index: 10000; 
-      flex-direction: column; 
-      gap: 30px; 
-      transition: opacity 0.8s;
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at center, #0a0a2a, #000); display: flex; justify-content: center; align-items: center; z-index: 10000; flex-direction: column; gap: 30px; transition: opacity 0.8s;
     }
     .loader-wrapper { position: relative; width: 150px; height: 150px; }
     .loader-ring { position: absolute; width: 100%; height: 100%; border-radius: 50%; border: 3px solid transparent; border-top-color: #00d4ff; border-right-color: #09f; animation: spin 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite; }
@@ -263,9 +163,9 @@
     
     .app-container { display: none; max-width: 480px; margin: 0 auto; background: transparent; min-height: 100vh; position: relative; z-index: 2; }
     
-    .header { background: linear-gradient(135deg, rgba(10,10,42,0.9), rgba(0,0,0,0.9)); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(0,212,255,0.3); padding: 0.7rem 1rem; position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; transition: all 0.3s; }
+    .header { background: linear-gradient(135deg, rgba(10,10,42,0.9), rgba(0,0,0,0.9)); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(0,212,255,0.3); padding: 0.7rem 1rem; position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
     .logo-area { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; flex: 1; }
-    .logo-top { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .logo-top { display: flex; align-items: center; gap: 10px; }
     .custom-logo { width: 40px; height: 40px; border-radius: 10px; object-fit: cover; border: 1px solid rgba(0,212,255,0.4); }
     .store-name { background: linear-gradient(135deg, #00d4ff, #09f); -webkit-background-clip: text; background-clip: text; color: transparent; font-weight: 800; font-size: 1.1rem; }
     .live-clock { font-size: 0.6rem; color: #aaa; font-family: monospace; white-space: nowrap; max-width: 200px; }
@@ -277,14 +177,9 @@
       cursor: pointer;
       font-size: 0.9rem;
       color: #00d4ff;
-      transition: 0.2s;
       display: flex;
       align-items: center;
       gap: 6px;
-    }
-    .theme-toggle-btn:hover {
-      background: #00d4ff30;
-      transform: scale(1.02);
     }
     .menu-icon { cursor: pointer; font-size: 1.6rem; color: #00d4ff; transition: 0.2s; animation: pulseGlow 2s infinite; }
     .menu-icon:hover { transform: rotate(90deg); }
@@ -302,16 +197,15 @@
     .menu-item { display: flex; align-items: center; gap: 12px; padding: 12px 0; color: #ddd; border-bottom: 1px solid rgba(255,255,255,0.05); cursor: pointer; transition: 0.2s; }
     .menu-item i { width: 24px; font-size: 1.2rem; color: #00d4ff; }
     .menu-item:hover { color: #00d4ff; padding-left: 5px; transform: translateX(5px); }
-    .sidebar-logout { width: 100%; padding: 12px; background: linear-gradient(135deg, #00d4ff20, #09f20); border: 1px solid rgba(0,212,255,0.3); border-radius: 12px; color: #00d4ff; font-weight: 600; cursor: pointer; margin-top: 2rem; transition: 0.2s; }
-    .sidebar-logout:hover { background: linear-gradient(135deg, #00d4ff, #09f); color: #000; }
+    .sidebar-logout { width: 100%; padding: 12px; background: linear-gradient(135deg, #00d4ff20, #09f20); border: 1px solid rgba(0,212,255,0.3); border-radius: 12px; color: #00d4ff; font-weight: 600; cursor: pointer; margin-top: 2rem; }
     
     .carousel-section { padding: 0.8rem 1rem 0.5rem; }
-    .carousel-container { overflow: hidden; border-radius: 16px; box-shadow: 0 0 15px rgba(0,212,255,0.15); }
+    .carousel-container { overflow: hidden; border-radius: 16px; }
     .carousel-slides { display: flex; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
     .carousel-slide { min-width: 100%; }
     .carousel-slide img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; border-radius: 16px; }
     .carousel-dots { display: flex; justify-content: center; gap: 6px; margin-top: 8px; }
-    .dot { width: 6px; height: 6px; border-radius: 50%; background: #444; cursor: pointer; transition: 0.2s; }
+    .dot { width: 6px; height: 6px; border-radius: 50%; background: #444; cursor: pointer; }
     .dot.active { background: #00d4ff; width: 18px; border-radius: 3px; }
     
     .announcement { background: linear-gradient(135deg, #00d4ff10, #09f10); border: 1px solid rgba(0,212,255,0.2); border-radius: 10px; margin: 0.5rem 1rem; padding: 0.6rem; overflow: hidden; backdrop-filter: blur(4px); }
@@ -345,7 +239,6 @@
       justify-content: center;
       gap: 6px;
       color: #888;
-      transition: 0.2s;
     }
     .tab-btn.active {
       background: linear-gradient(135deg, #00d4ff20, #09f20);
@@ -357,28 +250,25 @@
     .products-section.active-section { display: block; }
     @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     
-    .product-card { background: linear-gradient(135deg, rgba(17,17,17,0.9), rgba(10,10,10,0.9)); backdrop-filter: blur(4px); border-radius: 16px; padding: 0.8rem; margin-bottom: 0.8rem; display: flex; justify-content: space-between; align-items: center; border: 1px solid rgba(0,212,255,0.2); transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1); flex-wrap: wrap; gap: 10px; }
-    .product-card:hover { transform: translateY(-5px) scale(1.02); box-shadow: 0 12px 28px rgba(0,212,255,0.25); border-color: rgba(0,212,255,0.6); }
-    .product-icon { width: 45px; height: 45px; background: linear-gradient(135deg, #00d4ff10, #09f10); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #00d4ff; animation: floatIcon 3s ease-in-out infinite; flex-shrink: 0; }
-    .product-info { flex: 1; margin-left: 0.8rem; min-width: 120px; }
-    .product-info h3 { font-size: 0.9rem; font-weight: 700; color: #fff; margin-bottom: 3px; }
+    .product-card { background: linear-gradient(135deg, rgba(17,17,17,0.9), rgba(10,10,10,0.9)); backdrop-filter: blur(4px); border-radius: 16px; padding: 0.8rem; margin-bottom: 0.8rem; display: flex; justify-content: space-between; align-items: center; border: 1px solid rgba(0,212,255,0.2); transition: all 0.3s; flex-wrap: wrap; gap: 10px; }
+    .product-icon { width: 45px; height: 45px; background: linear-gradient(135deg, #00d4ff10, #09f10); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #00d4ff; animation: floatIcon 3s ease-in-out infinite; }
+    .product-info { flex: 1; margin-left: 0.8rem; }
+    .product-info h3 { font-size: 0.9rem; font-weight: 700; color: #fff; }
     .product-info p { font-size: 0.7rem; color: #aaa; }
     .price { font-weight: 800; color: #00d4ff; font-size: 0.95rem; white-space: nowrap; }
-    .buy-btn { background: linear-gradient(135deg, #00d4ff, #09f); background-size: 200% auto; border: none; color: #000; padding: 8px 16px; border-radius: 10px; font-weight: 700; font-size: 0.8rem; cursor: pointer; transition: 0.3s; animation: gradientShift 3s ease infinite; white-space: nowrap; }
-    .buy-btn:hover { transform: scale(1.05); box-shadow: 0 0 15px rgba(0,212,255,0.6); }
+    .buy-btn { background: linear-gradient(135deg, #00d4ff, #09f); background-size: 200% auto; border: none; color: #000; padding: 8px 16px; border-radius: 10px; font-weight: 700; font-size: 0.8rem; cursor: pointer; transition: 0.3s; animation: gradientShift 3s ease infinite; }
     
     .payment-view { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.98); z-index: 1000; display: none; align-items: center; justify-content: center; }
     .payment-view.active { display: flex; }
     .payment-card { background: linear-gradient(135deg, #111, #0a0a0a); max-width: 400px; width: 90%; border-radius: 24px; padding: 1.5rem; border: 1px solid rgba(0,212,255,0.3); max-height: 85vh; overflow-y: auto; }
-    .qr-code-img { width: 200px; height: 200px; margin: 0 auto; border-radius: 20px; object-fit: contain; display: block; box-shadow: 0 0 20px rgba(0,212,255,0.3); cursor: pointer; transition: 0.2s; animation: pulseGlow 2s infinite; }
-    .qr-download-btn { background: linear-gradient(135deg, #00d4ff20, #09f20); border: 1px solid rgba(0,212,255,0.3); color: #00d4ff; padding: 8px; border-radius: 10px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-size: 0.75rem; margin-top: 8px; width: 100%; }
-    .qr-download-btn:hover { background: linear-gradient(135deg, #00d4ff40, #09f40); transform: scale(0.98); }
+    .qr-code-img { width: 200px; height: 200px; margin: 0 auto; border-radius: 20px; object-fit: contain; display: block; box-shadow: 0 0 20px rgba(0,212,255,0.3); cursor: pointer; animation: pulseGlow 2s infinite; }
+    .qr-download-btn { background: linear-gradient(135deg, #00d4ff20, #09f20); border: 1px solid rgba(0,212,255,0.3); color: #00d4ff; padding: 8px; border-radius: 10px; cursor: pointer; width: 100%; margin-top: 8px; text-align: center; }
     .qris-warning { background: rgba(255,100,100,0.1); border: 1px solid rgba(255,80,80,0.3); border-radius: 12px; padding: 12px; margin: 10px 0; text-align: center; }
-    .qris-warning p { color: #f66; font-size: 0.7rem; margin: 4px 0; }
-    .whatsapp-input { width: 100%; padding: 12px; border: 1px solid rgba(0,212,255,0.3); border-radius: 10px; background: #1a1a1a; color: #fff; font-size: 1rem; margin: 8px 0; }
-    .warning-text { font-size: 0.7rem; color: #ffaa44; text-align: center; margin-top: -5px; margin-bottom: 10px; background: rgba(255,170,68,0.1); padding: 5px; border-radius: 8px; }
-    .file-upload-btn { background: linear-gradient(135deg, #00d4ff20, #09f20); border: 1px solid rgba(0,212,255,0.3); color: #00d4ff; padding: 10px; border-radius: 10px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 0.85rem; width: 100%; margin: 10px 0; }
-    .btn-order { background: linear-gradient(135deg, #00d4ff, #09f); background-size: 200% auto; width: 100%; padding: 12px; border: none; border-radius: 10px; font-weight: bold; margin-top: 1rem; cursor: pointer; transition: 0.3s; animation: gradientShift 3s ease infinite; }
+    .qris-warning p { color: #f66; font-size: 0.7rem; }
+    .whatsapp-input { width: 100%; padding: 12px; border: 1px solid rgba(0,212,255,0.3); border-radius: 10px; background: #1a1a1a; color: #fff; margin: 8px 0; }
+    .warning-text { font-size: 0.7rem; color: #ffaa44; text-align: center; background: rgba(255,170,68,0.1); padding: 5px; border-radius: 8px; }
+    .file-upload-btn { background: linear-gradient(135deg, #00d4ff20, #09f20); border: 1px solid rgba(0,212,255,0.3); color: #00d4ff; padding: 10px; border-radius: 10px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; margin: 10px 0; }
+    .btn-order { background: linear-gradient(135deg, #00d4ff, #09f); width: 100%; padding: 12px; border: none; border-radius: 10px; font-weight: bold; margin-top: 1rem; cursor: pointer; animation: gradientShift 3s ease infinite; }
     
     .zoom-modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); backdrop-filter: blur(20px); z-index: 20000; display: none; align-items: center; justify-content: center; cursor: pointer; }
     .zoom-modal.active { display: flex; }
@@ -391,16 +281,15 @@
     .login-wrapper { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at center, #0a0a2a, #000); display: flex; align-items: center; justify-content: center; z-index: 200; padding: 20px; }
     .login-card { background: linear-gradient(135deg, #111, #0a0a0a); border: 1px solid rgba(0,212,255,0.3); border-radius: 32px; padding: 2rem 1.5rem; width: 100%; max-width: 450px; }
     .password-wrapper { position: relative; width: 100%; margin: 8px 0; }
-    .password-wrapper input { width: 100%; padding: 14px 18px; padding-right: 50px; background: #1a1a1a; border: 1px solid rgba(0,212,255,0.3); border-radius: 12px; color: #fff; font-size: 1rem; }
+    .password-wrapper input { width: 100%; padding: 14px 18px; padding-right: 50px; background: #1a1a1a; border: 1px solid rgba(0,212,255,0.3); border-radius: 12px; color: #fff; }
     .toggle-password { position: absolute; right: 16px; top: 50%; transform: translateY(-50%); cursor: pointer; color: #00d4ff; }
-    .login-card input { background: #1a1a1a; border: 1px solid rgba(0,212,255,0.3); color: #fff; padding: 14px 18px; border-radius: 12px; width: 100%; margin: 8px 0; font-size: 1rem; }
-    .login-btn { background: linear-gradient(135deg, #00d4ff, #09f); width: 100%; padding: 14px; border: none; border-radius: 12px; font-weight: bold; font-size: 1rem; cursor: pointer; }
+    .login-card input { background: #1a1a1a; border: 1px solid rgba(0,212,255,0.3); color: #fff; padding: 14px 18px; border-radius: 12px; width: 100%; margin: 8px 0; }
+    .login-btn { background: linear-gradient(135deg, #00d4ff, #09f); width: 100%; padding: 14px; border: none; border-radius: 12px; font-weight: bold; cursor: pointer; }
     
-    .custom-footer { padding: 1rem; background: rgba(15,15,31,0.8); backdrop-filter: blur(8px); margin-top: 1rem; border-top: 1px solid rgba(0,212,255,0.2); border-radius: 20px 20px 0 0; }
+    .custom-footer { padding: 1rem; background: rgba(15,15,31,0.8); backdrop-filter: blur(8px); margin-top: 1rem; border-radius: 20px 20px 0 0; }
     .social-title { font-size: 1rem; font-weight: 700; margin-bottom: 1rem; display: flex; align-items: center; gap: 8px; color: #00e0ff; }
     .social-grid { display: flex; flex-direction: column; gap: 12px; }
-    .social-item { display: flex; align-items: center; justify-content: space-between; background: rgba(0,212,255,0.05); padding: 12px 16px; border-radius: 12px; border: 1px solid rgba(0,212,255,0.15); transition: 0.2s; cursor: pointer; flex-wrap: wrap; }
-    .social-item:hover { background: rgba(0,212,255,0.1); transform: translateX(5px); }
+    .social-item { display: flex; align-items: center; justify-content: space-between; background: rgba(0,212,255,0.05); padding: 12px 16px; border-radius: 12px; border: 1px solid rgba(0,212,255,0.15); cursor: pointer; }
     .social-left { display: flex; align-items: center; gap: 12px; }
     .social-icon { width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 10px; font-size: 1.3rem; }
     .social-icon.whatsapp-group { background: #25D36620; color: #25D366; }
@@ -412,24 +301,95 @@
     .verified-check i { color: #00d4ff; font-size: 0.7rem; }
     .verified-check span { color: #00d4ff; font-size: 0.65rem; font-weight: 500; }
     .copyright { text-align: center; padding: 1rem 0.8rem 0.5rem; font-size: 0.65rem; color: #aaa; }
+    
+    /* History Page - Fixed Text Visibility */
     .history-page { display: none; padding: 1rem; }
     .history-card { background: rgba(17,17,17,0.9); backdrop-filter: blur(4px); border-radius: 16px; padding: 1rem; margin-bottom: 1rem; border: 1px solid rgba(0,212,255,0.2); }
-    .empty-history { text-align: center; padding: 2rem; color: #666; }
+    .history-invoice { font-weight: 700; font-size: 0.8rem; color: #00d4ff; display: block; margin-bottom: 6px; }
+    .history-product { font-weight: 600; margin: 6px 0; color: #e0e0e0; }
+    .history-date { font-size: 0.7rem; color: #aaa; margin-bottom: 8px; }
+    .order-processing-message {
+      background: rgba(0,212,255,0.1);
+      padding: 12px;
+      border-radius: 12px;
+      margin-top: 12px;
+      font-size: 0.75rem;
+      color: #cbd5e6;
+      border-left: 3px solid #00d4ff;
+      word-break: break-word;
+    }
+    .empty-history { text-align: center; padding: 2rem; color: #aaa; }
     .clear-history-btn, .back-to-shop-btn { width: 100%; padding: 12px; border-radius: 12px; border: none; font-weight: bold; margin-top: 1rem; cursor: pointer; }
     .clear-history-btn { background: #ff4444; color: white; }
     .back-to-shop-btn { background: linear-gradient(135deg, #00d4ff, #09f); color: #000; }
+    
+    /* Custom Confirm Modal */
+    .custom-confirm-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.85);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10002;
+      backdrop-filter: blur(8px);
+    }
+    .custom-confirm-card {
+      background: linear-gradient(135deg, #1a1a2a, #0a0a0a);
+      border-radius: 28px;
+      padding: 28px;
+      max-width: 320px;
+      text-align: center;
+      border: 1px solid rgba(0,212,255,0.4);
+      width: 85%;
+    }
+    .custom-confirm-card i {
+      font-size: 2.5rem;
+      color: #ffaa44;
+      margin-bottom: 10px;
+    }
+    .custom-confirm-card h3 {
+      color: #00d4ff;
+      margin-bottom: 12px;
+    }
+    .custom-confirm-card p {
+      color: #ddd;
+      margin-bottom: 20px;
+      font-size: 0.9rem;
+    }
+    .confirm-btns {
+      display: flex;
+      gap: 12px;
+    }
+    .confirm-yes, .confirm-no {
+      flex: 1;
+      padding: 12px;
+      border-radius: 40px;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .confirm-yes { background: #ff4444; color: white; }
+    .confirm-no { background: #2a2a2a; border: 1px solid #444; color: #ccc; }
+    .confirm-yes:hover, .confirm-no:hover { transform: scale(0.98); }
+    
     .icon-large { font-size: 3rem; color: #00d4ff; margin-bottom: 0.5rem; text-align: center; }
     .form-title { font-size: 1.5rem; font-weight: 700; text-align: center; background: linear-gradient(135deg, #00d4ff, #09f); -webkit-background-clip: text; background-clip: text; color: transparent; }
     .form-subtitle { font-size: 0.8rem; color: #888; text-align: center; margin-bottom: 1.5rem; }
-    .divider { display: flex; align-items: center; text-align: center; margin: 20px 0; color: #444; font-size: 0.75rem; }
+    .divider { display: flex; align-items: center; text-align: center; margin: 20px 0; color: #444; }
     .divider::before, .divider::after { content: ''; flex: 1; border-bottom: 1px solid rgba(0,212,255,0.2); }
     .divider::before { margin-right: 10px; }
     .divider::after { margin-left: 10px; }
     .form-switch { text-align: center; margin-top: 20px; font-size: 0.85rem; color: #888; }
     .form-switch a { color: #00d4ff; cursor: pointer; }
     .otp-wrapper { display: flex; gap: 10px; margin: 8px 0; flex-wrap: wrap; }
-    .otp-wrapper input { flex: 1; min-width: 120px; }
+    .otp-wrapper input { flex: 1; }
     .otp-wrapper button { width: auto; margin: 0; padding: 14px 20px; white-space: nowrap; }
+    
     @media (max-width: 480px) {
       .product-card { flex-wrap: wrap; }
       .tab-btn { font-size: 0.75rem; }
@@ -472,7 +432,7 @@
   </div></div></div>
 
   <div id="shopContent" style="display: none;">
-    <div class="carousel-section"><div class="carousel-container"><div class="carousel-slides" id="carouselSlides"><div class="carousel-slide"><img src="https://files.catbox.moe/gpoxlo.png" alt="Promo 1" id="adImage1"></div><div class="carousel-slide"><img src="https://files.catbox.moe/ggglaj.png" alt="Promo 2" id="adImage2"></div><div class="carousel-slide"><img src="https://files.catbox.moe/6kzrcv.png" alt="Promo 3" id="adImage3"></div></div></div><div class="carousel-dots" id="carouselDots"></div></div>
+    <div class="carousel-section"><div class="carousel-container"><div class="carousel-slides" id="carouselSlides"><div class="carousel-slide"><img src="https://files.catbox.moe/gpoxlo.png" alt="Promo 1"></div><div class="carousel-slide"><img src="https://files.catbox.moe/ggglaj.png" alt="Promo 2"></div><div class="carousel-slide"><img src="https://files.catbox.moe/6kzrcv.png" alt="Promo 3"></div></div></div><div class="carousel-dots" id="carouselDots"></div></div>
     <div class="announcement"><div class="marquee-text"><span>⚠️ PENGUMUMAN: WEBSITE KAMI SEDANG TAHAP PENGEMBANGAN • TRANSAKSI DI JAM 23:00 AKAN DI PROSES HARI SELANJUTNYA.</span></div></div>
     <div class="menu-tabs"><button class="tab-btn active" data-tab="produk"><i class="fas fa-box"></i> Produk</button><button class="tab-btn" data-tab="v2"><i class="fas fa-star"></i> Nokos</button><button class="tab-btn" data-tab="lainnya"><i class="fas fa-graduation-cap"></i> Lainnya</button></div>
     <div class="products-section active-section" id="tabProduk"><div class="product-card" data-product="AM PREM JANUARI 2027" data-price="3000"><div class="product-icon"><i class="fas fa-video"></i></div><div class="product-info"><h3>AM PREM JANUARI 2027</h3><p>NO GARANSI</p></div><div class="price">Rp3.000</div><button class="buy-btn">Beli</button></div><div class="product-card" data-product="AM PREM APRIL 2027" data-price="5000"><div class="product-icon"><i class="fas fa-film"></i></div><div class="product-info"><h3>AM PREM APRIL 2027</h3><p>GARANSI 2 BULAN</p></div><div class="price">Rp5.000</div><button class="buy-btn">Beli</button></div><div class="product-card" data-product="Capcut Pro" data-price="53000"><div class="product-icon"><i class="fas fa-cut"></i></div><div class="product-info"><h3>Capcut Pro</h3><p>CC Private 1 Bulan</p></div><div class="price">Rp53.000</div><button class="buy-btn">Beli</button></div><div class="product-card" data-product="Canva Pro" data-price="5000"><div class="product-icon"><i class="fas fa-palette"></i></div><div class="product-info"><h3>Canva Pro</h3><p>Canv Pro Invite</p></div><div class="price">Rp5.000</div><button class="buy-btn">Beli</button></div><div class="product-card" data-product="YouTube Premium" data-price="5000"><div class="product-icon"><i class="fab fa-youtube"></i></div><div class="product-info"><h3>YouTube Premium</h3><p>Akses Premium 1 Bulan Famplan</p></div><div class="price">Rp5.000</div><button class="buy-btn">Beli</button></div><div class="product-card" data-product="Spotify Premium" data-price="15000"><div class="product-icon"><i class="fab fa-spotify"></i></div><div class="product-info"><h3>Spotify Premium</h3><p>Premium 1 Bulan Indplan</p></div><div class="price">Rp15.000</div><button class="buy-btn">Beli</button></div><div class="product-card" data-product="Wink Premium" data-price="4000"><div class="product-icon"><i class="fas fa-heart"></i></div><div class="product-info"><h3>Wink Premium</h3><p>Private Akun 7 Hari Full Gar Android Only</p></div><div class="price">Rp4.000</div><button class="buy-btn">Beli</button></div></div>
@@ -481,10 +441,15 @@
     <div class="custom-footer"><div class="social-title"><i class="fas fa-share-alt"></i> Ikuti Sosial Media Kami</div><div class="social-grid"><div class="social-item" onclick="window.open('https://chat.whatsapp.com/IKiB1NfrHkfFD99IhUZHX5', '_blank')"><div class="social-left"><div class="social-icon whatsapp-group"><i class="fab fa-whatsapp"></i></div><span class="social-name">Grup WhatsApp <span class="verified-check"><i class="fas fa-check-circle"></i><span>Ter verifikasi</span></span></span></div></div><div class="social-item" onclick="window.open('https://whatsapp.com/channel/0029Vb8IcR4CcW4x4difTI2F', '_blank')"><div class="social-left"><div class="social-icon whatsapp-channel"><i class="fab fa-whatsapp"></i></div><span class="social-name">Saluran WhatsApp <span class="verified-check"><i class="fas fa-check-circle"></i><span>Ter verifikasi</span></span></span></div></div><div class="social-item" onclick="window.open('https://www.instagram.com/ynw_nnd4?igsh=MWdqenZzZXQxbHk1', '_blank')"><div class="social-left"><div class="social-icon instagram"><i class="fab fa-instagram"></i></div><span class="social-name">Instagram <span class="verified-check"><i class="fas fa-check-circle"></i><span>Ter verifikasi</span></span></span></div></div><div class="social-item" onclick="window.open('https://tiktok.com/@de_lanvncy', '_blank')"><div class="social-left"><div class="social-icon tiktok"><i class="fab fa-tiktok"></i></div><span class="social-name">TikTok <span class="verified-check"><i class="fas fa-check-circle"></i><span>Ter verifikasi</span></span></span></div></div></div><div class="copyright">© 2026 Putz DigitalStore | Transaksi Aman 100%</div></div>
   </div>
 
-  <div id="historyPage" class="history-page"><h3 style="color:#00d4ff;"><i class="fas fa-history"></i> Riwayat Pesanan</h3><div id="historyList"></div><button id="clearUserHistoryBtn" class="clear-history-btn" style="display: none;">Hapus Riwayat Saya</button><button id="backToShopBtn" class="back-to-shop-btn">Kembali ke Toko</button></div>
+  <div id="historyPage" class="history-page">
+    <h3 style="color:#00d4ff; margin-bottom: 1rem;"><i class="fas fa-history"></i> Riwayat Pesanan</h3>
+    <div id="historyList"></div>
+    <button id="clearUserHistoryBtn" class="clear-history-btn" style="display: none;">Hapus Riwayat Saya</button>
+    <button id="backToShopBtn" class="back-to-shop-btn">Kembali ke Toko</button>
+  </div>
 </div>
 
-<div id="paymentView" class="payment-view"><div class="payment-card"><div style="text-align:center"><h3 style="color:#00d4ff;"><i class="fas fa-qrcode"></i> QRIS Only</h3><img src="https://files.catbox.moe/v9uwpq.jpeg" class="qr-code-img" id="qrisImage"><button id="downloadQrisBtn" class="qr-download-btn"><i class="fas fa-download"></i> Download QRIS</button><div class="qris-warning"><p><i class="fas fa-exclamation-triangle"></i> PENTING! Jika Website Ter`Refresh Sendiri Dan Masuk Tampilan Awal? Jangan Panik, Pilih Produk Yang Mau Di Beli Dan Langsung Saja Upload Bukti Pembaya</p></div><p><strong id="paymentAmount" style="color:#00d4ff;"></strong><br><span id="paymentProduct"></span></p><div class="file-upload-btn" id="triggerUpload"><i class="fas fa-upload"></i> Upload Bukti Transfer</div><input type="file" id="proofImage" accept="image/*" style="display:none"><div id="fileInfo"></div><label class="label-text"><i class="fas fa-university"></i> Nomor Dana (Refund)</label><input type="tel" id="danaNumber" class="whatsapp-input" placeholder="081234567890"><div class="warning-text"><i class="fas fa-exclamation-circle"></i> Masukan nomor DANA dengan benar untuk refund jika stok kosong.</div><button id="submitOrderBtn" class="btn-order">Pesan Sekarang</button><button id="backToProductsBtn" style="margin-top:0.8rem; background:#1a1a1a; border:1px solid rgba(0,212,255,0.3); color:#00d4ff; padding:10px; border-radius:10px; width:100%; cursor:pointer;">Kembali</button></div></div></div>
+<div id="paymentView" class="payment-view"><div class="payment-card"><div style="text-align:center"><h3 style="color:#00d4ff;"><i class="fas fa-qrcode"></i> QRIS Only</h3><img src="https://files.catbox.moe/v9uwpq.jpeg" class="qr-code-img" id="qrisImage"><button id="downloadQrisBtn" class="qr-download-btn"><i class="fas fa-download"></i> Download QRIS</button><div class="qris-warning"><p><i class="fas fa-exclamation-triangle"></i> PENTING! Upload bukti transfer dengan jelas. Pastikan nomor DANA aktif.</p></div><p><strong id="paymentAmount" style="color:#00d4ff;"></strong><br><span id="paymentProduct"></span></p><div class="file-upload-btn" id="triggerUpload"><i class="fas fa-upload"></i> Upload Bukti Transfer</div><input type="file" id="proofImage" accept="image/*" style="display:none"><div id="fileInfo"></div><label class="label-text"><i class="fas fa-university"></i> Nomor Dana (Refund)</label><input type="tel" id="danaNumber" class="whatsapp-input" placeholder="081234567890"><div class="warning-text"><i class="fas fa-exclamation-circle"></i> Masukan nomor DANA dengan benar untuk refund jika stok kosong.</div><button id="submitOrderBtn" class="btn-order">Pesan Sekarang</button><button id="backToProductsBtn" style="margin-top:0.8rem; background:#1a1a1a; border:1px solid rgba(0,212,255,0.3); color:#00d4ff; padding:10px; border-radius:10px; width:100%; cursor:pointer;">Kembali</button></div></div></div>
 <div id="zoomQrisModal" class="zoom-modal"><div class="close-zoom"><i class="fas fa-times"></i></div><img id="zoomQrisImg" src=""></div>
 <div id="popupNotification" class="popup-notification"><i class="fas fa-circle-info"></i><span id="popupMessage"></span></div>
 
@@ -520,6 +485,26 @@
       document.getElementById('popupMessage').innerHTML = msg;
       popup.classList.add('show');
       setTimeout(() => popup.classList.remove('show'), 3000);
+    }
+    
+    // Custom Confirm Modal (kembali seperti semula)
+    function showCustomConfirm(message, onConfirm) {
+      let modal = document.createElement('div');
+      modal.className = 'custom-confirm-modal';
+      modal.innerHTML = `
+        <div class="custom-confirm-card">
+          <i class="fas fa-exclamation-triangle"></i>
+          <h3>Konfirmasi Hapus</h3>
+          <p>${message}</p>
+          <div class="confirm-btns">
+            <button class="confirm-yes">Ya, Hapus</button>
+            <button class="confirm-no">Batal</button>
+          </div>
+        </div>
+      `;
+      document.body.appendChild(modal);
+      modal.querySelector('.confirm-yes').onclick = () => { modal.remove(); onConfirm(); };
+      modal.querySelector('.confirm-no').onclick = () => modal.remove();
     }
     
     function generateInvoice() { return "INV" + Date.now() + Math.floor(Math.random() * 1000); }
@@ -564,8 +549,22 @@
       const container = document.getElementById('historyList');
       if(!container) return;
       const userOrders = orders.filter(o => o.buyerEmail === currentUserEmail);
-      if(userOrders.length === 0) { container.innerHTML = '<div class="empty-history">Belum ada pesanan</div>'; return; }
-      container.innerHTML = userOrders.map(order => `<div class="history-card"><div class="history-header"><span class="history-invoice">${order.invoice}</span></div><div class="history-product">${order.product} - Rp${order.price.toLocaleString()}</div><div class="history-date">⏰ ${order.createdAt}</div><div class="order-processing-message"><i class="fas fa-info-circle"></i> Pesanan sedang diproses. Jika produk kosong akan refund ke ${order.whatsapp}. Stok ada akan dikirim via email.</div></div>`).join('');
+      if(userOrders.length === 0) { 
+        container.innerHTML = '<div class="empty-history"><i class="fas fa-inbox"></i> Belum ada pesanan</div>'; 
+        return; 
+      }
+      container.innerHTML = userOrders.map(order => `
+        <div class="history-card">
+          <div class="history-invoice"><i class="fas fa-receipt"></i> ${order.invoice}</div>
+          <div class="history-product"><strong>${order.product}</strong> - Rp${order.price.toLocaleString()}</div>
+          <div class="history-date">⏰ ${order.createdAt}</div>
+          <div class="order-processing-message">
+            <i class="fas fa-clock"></i> Pesanan sedang diproses.<br>
+            📱 Dana refund: <strong>${order.whatsapp}</strong><br>
+            ✉️ Jika stok tersedia, akan dikirim ke email: ${order.buyerEmail}
+          </div>
+        </div>
+      `).join('');
       const clearBtn = document.getElementById('clearUserHistoryBtn');
       if(clearBtn) clearBtn.style.display = userOrders.length ? 'block' : 'none';
     }
@@ -613,7 +612,6 @@
       selectedFile = null;
     }
     
-    // Carousel
     function initCarousel() {
       const slides = document.querySelectorAll('.carousel-slide');
       if(!slides.length) return;
@@ -637,7 +635,6 @@
       updateCarousel(); resetAuto();
     }
     
-    // Theme Toggle
     function initTheme() {
       const toggleBtn = document.getElementById('themeToggle');
       if(!toggleBtn) return;
@@ -657,7 +654,6 @@
       });
     }
     
-    // Clock
     function startClock() {
       const clockElem = document.getElementById('liveClock');
       if(!clockElem) return;
@@ -679,7 +675,6 @@
       setInterval(update, 1000);
     }
     
-    // QR Zoom
     function initQrZoom() {
       const qrisImg = document.getElementById('qrisImage');
       const zoomModal = document.getElementById('zoomQrisModal');
@@ -691,7 +686,6 @@
       }
     }
     
-    // Event binding
     function bindEvents() {
       document.querySelectorAll('.product-card').forEach(card => {
         card.querySelector('.buy-btn').addEventListener('click', (e) => {
@@ -720,14 +714,17 @@
       document.getElementById('backToProductsBtn')?.addEventListener('click', () => document.getElementById('paymentView').classList.remove('active'));
       document.getElementById('doLoginBtn')?.addEventListener('click', handleLogin);
       document.getElementById('sidebarLogoutBtn')?.addEventListener('click', logout);
+      
+      // PERBAIKAN: Gunakan custom confirm untuk hapus riwayat
       document.getElementById('clearUserHistoryBtn')?.addEventListener('click', () => {
-        if(confirm('Hapus semua riwayat pesanan Anda?')) {
+        showCustomConfirm('Hapus semua riwayat pesanan Anda? Tindakan ini tidak dapat dibatalkan.', () => {
           orders = orders.filter(o => o.buyerEmail !== currentUserEmail);
           localStorage.setItem('all_orders', JSON.stringify(orders));
           updateHistoryView();
-          showPopup('Riwayat dihapus');
-        }
+          showPopup('✅ Riwayat pesanan Anda telah dihapus.');
+        });
       });
+      
       document.getElementById('menuIcon')?.addEventListener('click', () => { document.getElementById('sidebar').classList.add('open'); document.getElementById('sidebarOverlay').classList.add('active'); });
       document.getElementById('sidebarOverlay')?.addEventListener('click', () => { document.getElementById('sidebar').classList.remove('open'); document.getElementById('sidebarOverlay').classList.remove('active'); });
       document.getElementById('contactCsBtn')?.addEventListener('click', () => window.open('https://wa.me/62882005747303', '_blank'));
@@ -783,7 +780,6 @@
       icon.addEventListener('click', function() { const target = document.getElementById(this.getAttribute('data-target')); if(target) { target.type = target.type === 'password' ? 'text' : 'password'; this.classList.toggle('fa-eye'); this.classList.toggle('fa-eye-slash'); } });
     });
     
-    // Load saved login state
     function restoreSession() {
       if(localStorage.getItem('digitalLoggedIn') === 'true') {
         const email = localStorage.getItem('digitalUserEmail');
@@ -802,7 +798,6 @@
       }
     }
     
-    // Hilangkan loading screen
     function hideLoading() {
       const loading = document.getElementById('loadingScreen');
       if(loading) {
@@ -811,7 +806,6 @@
       } else { document.getElementById('appContainer').style.display = 'block'; }
     }
     
-    // Start semua
     window.addEventListener('DOMContentLoaded', () => {
       initTheme();
       startClock();
